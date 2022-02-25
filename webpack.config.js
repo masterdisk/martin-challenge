@@ -1,10 +1,15 @@
 const Encore = require('@symfony/webpack-encore');
+const webpack = require('webpack');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
 if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
+
+Encore.configureWatchOptions(options => {
+  options.poll = 250;
+});
 
 Encore
     // directory where compiled assets will be stored
@@ -49,6 +54,12 @@ Encore
         config.plugins.push('@babel/plugin-proposal-class-properties');
     })
 
+  //DevTools
+  .addPlugin(new webpack.DefinePlugin({
+    __VUE_OPTIONS_API__: true,
+    __VUE_PROD_DEVTOOLS__: true
+  }))
+
     // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
         config.useBuiltIns = 'usage';
@@ -76,3 +87,4 @@ Encore
 ;
 
 module.exports = Encore.getWebpackConfig();
+
