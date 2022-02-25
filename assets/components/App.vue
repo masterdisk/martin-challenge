@@ -1,6 +1,7 @@
 <template>
     <div>
         <h2 class="center">My Application</h2>
+        <h2 class="center">My Application</h2>
         <div v-text="message"></div>
         <ul>
             <li :key="country.id" v-for="country in countries">{{ country }}</li>
