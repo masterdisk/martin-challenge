@@ -1,7 +1,7 @@
 <script>
+
 import FetchedData from './partials/FetchedData'
 import Home from './partials/Home'
-
 
 const routes = {
     '/': Home,
