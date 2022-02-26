@@ -1,11 +1,22 @@
+<template>
+    <div class="navbar">
+        <a href="#/">Home</a> |
+        <a href="#/data">Data</a> |
+        <a href="#/edit">Edit Data</a>
+    </div>
+    <component :is="currentView"/>
+</template>
+
 <script>
 
-import FetchedData from './partials/FetchedData'
-import Home from './partials/Home'
+import FetchedData from "../ViewData";
+import EditData from "../EditData";
+import Home from "../Home";
 
 const routes = {
     '/': Home,
-    '/data': FetchedData
+    '/data': FetchedData,
+    '/edit': EditData
 }
 
 export default {
@@ -27,19 +38,9 @@ export default {
 }
 </script>
 
-<template>
-    <div class="navbar">
-        <a href="#/">Home</a> |
-        <a href="#/data">Data</a> |
-        <a href="#/non-existent-path">Broken Link</a>
-    </div>
-    <component :is="currentView"/>
-</template>
-
-
 <style>
 
-.navbar{
+.navbar {
     text-align: center;
 }
 

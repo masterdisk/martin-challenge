@@ -12,7 +12,8 @@ import './styles/app.css';
 // start the Stimulus application
 import './bootstrap';
 
-import App from './components/App';
+
+import App from './views/App';
 import { createApp } from 'vue';
 
 
