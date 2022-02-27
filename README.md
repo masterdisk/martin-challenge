@@ -12,6 +12,23 @@ A [Docker](https://www.docker.com/)-based installer and runtime for the [Symfony
 4. Open `https://localhost` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
 5. Run `docker-compose down --remove-orphans` to stop the Docker containers.
 
+**Commands used for attaching VueJS!**
+1. composer require --dev symfony/maker-bundle
+2. composer require symfony/webpack-encore-bundle
+3. apk add curl
+4. apk add nodejs yarn
+5. yarn add vue
+
+Run yarn watch for VueJS
+
+###Libraries used:
+1. BulmaCSS
+2. WebPack Encore for injecting VueJS to Symfony
+
+
+#Schema used from [this mockapi](https://mockapi.io)
+![img.png](img.png)
+
 ## Features
 
 * Production, development and CI ready
