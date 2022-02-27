@@ -12,10 +12,14 @@
 
             <tr v-for="row in fetchedData" :key="fetchedData.id">
                 <td>{{ row.id }}</td>
+
                 <td>{{ row.city_name }}</td>
-                <td>{{ row.city_visited }}</td>
+
+                <td v-if="row.city_visited === true" class="favorite-country">visited</td>
+                <td v-else class="not-favorite-country">not visited</td>
+
                 <td>{{ row.city_visits }}</td>
-                <td v-if="row.city_visits > 3" class="favorite-country" @click="greet">favorite</td>
+                <td v-if="row.city_visits >= 3" class="favorite-country" @click="greet">favorite</td>
                 <td v-else class="not-favorite-country" @click="reload()">not favorite</td>
             </tr>
             </thead>

@@ -7,10 +7,25 @@
 
         <div class="field has-addons p-2">
             <div class="control">
+
                 <input v-model="nameCountry" class="input is-inline" type="text" placeholder="Name">
-                <input v-model="visited" class="input is-inline" type="text" placeholder="Visited yes/no">
+
+                <!--  visited/not visited dropdown -->
+                <div class="control is-inline">
+                    <div class="select">
+                        <select v-model="visited">
+                            <option>visited</option>
+                            <option>not visited</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--  favorite/not favorite dropdown -->
+
                 <input v-model="noVisits" class="input is-inline" type="text" placeholder="No. of visits">
-                <input v-model="favorite" class="input is-inline" type="text" placeholder="favorite">
+
+                <!--  Submit button-->
+
             </div>
             <div class="control">
                 <a class="button is-info" @click="sendData()">
@@ -43,7 +58,6 @@ export default {
             nameCountry: '',
             visited: '',
             noVisits: '',
-            favorite: '',
         }
     },
     computed: {
@@ -62,13 +76,25 @@ export default {
             let checkCountry = await Services.checkIfExists(this.nameCountry)
 
             if (checkCountry.length === 1) alert("the country exists!");
-            else { alert("the country doesn't exist");
+            else {
+
+
+                switch (this.visited) {
+                    case "visited":
+                        this.visited = true;
+                        break;
+                    default:
+                        this.visited = false;
+                        break;
+                }
+
+               if((this.noVisits > 1 ) && (this.visited === false)) { alert("The country was visited!"); this.visited = true;}
 
                 let newCountry = {
 
                     "city_name": this.nameCountry,
-                    'city_visited':this.visited,
-                    'city_visits':this.noVisits,
+                    'city_visited': this.visited,
+                    'city_visits': this.noVisits,
                 }
 
                 await Services.addCity(newCountry);
