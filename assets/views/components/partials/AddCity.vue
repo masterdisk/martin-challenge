@@ -75,16 +75,12 @@ export default {
                 }
 
                 await Services.addCity(newCountry);
-                window.location.reload();
+                this.reload();
             }
 
-            // console.log(typeof checkCountry);
-            // console.log( checkCountry);
-            // console.log(this.nameCountry);
-            // console.log(this.visited);
-            // console.log(this.noVisits);
-            // console.log(this.favorite);
-
+        },
+        reload() {
+            window.location.reload();
         }
     }
 }
