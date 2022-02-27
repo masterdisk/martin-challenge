@@ -28,7 +28,6 @@ export default {
 //add city
   async markCity(id, visited) {
     let res = await axios.put("https://6217a42671e7672e53868583.mockapi.io/tableForUsers/" + id, { city_visited: !visited });
-    console.log(res.data);
     return res.data;
   },
 

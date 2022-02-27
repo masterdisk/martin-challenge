@@ -15,9 +15,11 @@ A [Docker](https://www.docker.com/)-based installer and runtime for the [Symfony
 **Commands used for attaching VueJS!**
 1. composer require --dev symfony/maker-bundle
 2. composer require symfony/webpack-encore-bundle
-3. apk add curl
+3. composer require doctrine/annotations
 4. apk add nodejs yarn
 5. yarn add vue
+6. yarn add bulma
+
 
 Run yarn watch for VueJS
 
@@ -25,9 +27,8 @@ Run yarn watch for VueJS
 1. BulmaCSS
 2. WebPack Encore for injecting VueJS to Symfony
 
-
 #Schema used from [this mockapi](https://mockapi.io)
-![img.png](img.png)
+![img.png](readme_imgs/img.png)
 
 ## Features
 
@@ -38,6 +39,34 @@ Run yarn watch for VueJS
 * [Vulcain](https://vulcain.rocks) support
 * Just 2 services (PHP FPM and Caddy server)
 * Super-readable configuration
+
+
+##Screenshots
+
+![img_2.png](readme_imgs/img_2.png)
+![img_1.png](readme_imgs/img_1.png)
+
+
+##Testing
+
+White Box and Black Box testing were used as I have knowledge of the code. My main goal was to test the structure and the logic
+ but also the functionality from a behavioral point of view.
+
+Unit Testing is not needed as the assertions are mostly coming from an outer data layer becoming redundant as they need to be changed each time the data layer is changed. 
+Some tests could have been implemented for the Services.js file in order to assert data.
+I would have implemented Vue test utils if the App had been more complex.
+
+Use cases tested:
+1. Add a new city which is unique
+2. Mark each city as visited (click on visited/not visited)
+3. Cities with at least 3 visits should be automatically highlighted as favourite
+
+Problems/bugs along the way:
+1. Add a city with at least a visit and have it not visited (kind of silly)
+2. Switch visited/not visited even if the city was visited or not (I left it like because there were no instructions regarding this functionality)
+3. Webpack enabling for Vue dev-tools
+4. Got ambitious to implement it with composition API.
+5. Too much coffee :)
 
 **Enjoy!**
 
