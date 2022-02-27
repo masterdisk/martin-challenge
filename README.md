@@ -27,6 +27,8 @@ Run yarn watch for VueJS
 1. BulmaCSS
 2. WebPack Encore for injecting VueJS to Symfony
 3. Schema used from [this mockapi](https://mockapi.io)
+
+
 ![img.png](readme_imgs/img.png)
 
 ## Features
