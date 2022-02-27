@@ -8,14 +8,14 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+import 'bulma';
+
 
 // start the Stimulus application
 import './bootstrap';
 
-
 import App from './views/App';
 import { createApp } from 'vue';
-
 
 createApp(App).mount('#app');
 
