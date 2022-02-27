@@ -2,7 +2,7 @@
     <div class="container navbar ">
         <a class='navbar-item' href="#/">Home</a>
         <a class='navbar-item' href="#/data">Data</a>
-        <a class='navbar-item' href="#/edit">Edit Data</a>
+<!--        <a class='navbar-item' href="#/edit">Edit Data</a>  Composition API attempt-->
 
 
 <AddCity />
