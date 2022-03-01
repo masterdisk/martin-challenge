@@ -9,12 +9,12 @@
             <td class="has-text-weight-bold">Favorite</td>
 
             <tr v-for="row in fetchedData" :key="fetchedData.id">
-                <td>{{ row.id }}</td>
-                <td>{{ row.city_name }}</td>
-                <td v-if="row.city_visited === true" class="favorite-country" @click="markFavourite(row.id,row.city_visited)">visited  </td>
-                <td v-else class="not-favorite-country" @click="markFavourite(row.id,row.city_visited)">not visited</td>
-                <td v-if="row.city_visits >= 3" class="favorite-country has-text-weight-bold">favourite </td>
-                <td v-else class="not-favorite-country has-text-weight-bold" >not favourite</td>
+                <td class="id_country">{{ row.id }}</td>
+                <td class="name_country">{{ row.city_name }}</td>
+                <td v-if="row.city_visited === true" class="favourite-city" @click="markFavourite(row.id,row.city_visited)">visited  </td>
+                <td v-else class="not-favourite-city" @click="markFavourite(row.id,row.city_visited)">not visited</td>
+                <td v-if="row.city_visits >= 3" class="favourite-city has-text-weight-bold">favourite </td>
+                <td v-else class="not-favourite-city has-text-weight-bold" >not favourite</td>
             </tr>
 
             </thead>
@@ -59,11 +59,11 @@ export default {
     background-color: lightblue
 }
 
-.favorite-country {
+.favourite-city {
     color: green !important;
 }
 
-.not-favorite-country {
+.not-favourite-city {
     color: red !important;
 }
 
