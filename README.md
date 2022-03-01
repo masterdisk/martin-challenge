@@ -53,9 +53,10 @@ Run yarn watch for VueJS
 White Box and Black Box testing were used as I have knowledge of the code. My main goal was to test the structure and the logic
  but also the functionality from a behavioral point of view.
 
-Unit Testing is not needed as the assertions are mostly coming from an outer data layer becoming redundant as they need to be changed each time the data layer is changed. 
-Some tests could have been implemented for the Services.js file in order to assert data.
-I would have implemented Vue test utils if the App had been more complex.
+Unit test was used for:
+
+* Components (Home) including partials (addCity, navBar and table)
+* Services ( /GET:all, /GET:id, /PUT:id)
 
 Use cases tested:
 1. Add a new city which is unique
